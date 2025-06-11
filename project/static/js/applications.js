@@ -9,10 +9,10 @@ function showAppTab(tab, event) {
     event.target.classList.add('active');
 }
 
-async function compressFileAuto() {
-    const input = document.getElementById(`file-upload`);
-    const result = document.getElementById(`file-result`);
-    const progress = document.getElementById(`file-progress`);
+async function compressFile(type) {
+    const input = document.getElementById(`${type}-upload`);
+    const result = document.getElementById(`${type}-result`);
+    const progress = document.getElementById(`${type}-progress`);
 
     result.textContent = '';  // Clear previous message
     progress.style.display = 'block'; // Show progress bar
@@ -23,20 +23,8 @@ async function compressFileAuto() {
         return;
     }
 
-    const file = input.files[0];
     const formData = new FormData();
-    formData.append('file', file);
-
-    // Auto-detect file type based on extension
-    const ext = file.name.split('.').pop().toLowerCase();
-    let type = 'bin'; // fallback
-    if(['txt', 'csv', 'log'].includes(ext)) type = 'txt';
-    else if(ext === 'zip') type = 'zip';
-    else {
-        result.textContent = 'Unsupported file type.';
-        progress.style.display = 'none';
-        return;
-    }
+    formData.append('file', input.files[0]);
 
     try {
         const response = await fetch(`/compress/${type}`, {
@@ -46,7 +34,7 @@ async function compressFileAuto() {
         });
 
         const data = await response.json();
-        progress.style.display = 'none';
+        progress.style.display = 'none'; // Hide progress bar
 
         if (data.success) {
             result.innerHTML = `
@@ -55,14 +43,14 @@ async function compressFileAuto() {
                 Compressed Size: ${data.compressed_size} bytes<br>
                 Compression Ratio: ${data.ratio.toFixed(2)}%<br>
                 <a href="${data.compressed_file}" download class="cta-button">Download Compressed File</a>
+                
             `;
         } else {
             result.textContent = `Failed: ${data.message}`;
         }
     } catch (error) {
         result.textContent = 'Error during compression. Please try again.';
-        progress.style.display = 'none';
+        progress.style.display = 'none'; // Hide progress on error
         console.error(error);
     }
 }
-
