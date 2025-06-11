@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Huffman Coding</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="/static/js/login.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Huffman Coding</div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About Huffman Coding</a></li>
+            <li><a href="/applications">Applications</a></li>
+            <li><a href="/resources">Resources</a></li>
+
+            {% if session.get('user_id') %}
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/logout">Logout</a></li>
+            {% else %}
+                <li><a href="/login" class="active">Login</a></li>
+            {% endif %}
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <main>
+        <section class="auth-container">
+            <h2>Login / Sign Up</h2>
+            <div class="auth-tabs">
+                <button class="tab active" onclick="showTab('login',event)">Login</button>
+                <button class="tab" onclick="showTab('signup',event)">Sign Up</button>
+            </div>
+
+            <form id="login-form" class="auth-form">
+                <input type="email" id="login-email" placeholder="Email" required>
+                <input type="password" id="login-password" placeholder="Password" required>
+                <button type="submit" class="cta-button">Login</button>
+                <p id="login-error" class="error"></p>
+            </form>
+
+            <form id="signup-form" class="auth-form" style="display: none;">
+                <input type="text" id="signup-username" placeholder="Username" required>
+                <input type="email" id="signup-email" placeholder="Email" required>
+                <input type="password" id="signup-password" placeholder="Password" required>
+                <button type="submit" class="cta-button">Sign Up</button>
+                <p id="signup-error" class="error"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Huffman Coding. All rights reserved.</p>
+        <p>Contact: <a href="mailto:info@huffmancoding.com">info@huffmancoding.com</a></p>
+        <div class="social-links">
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+            <a href="https://github.com" target="_blank">GitHub</a>
+            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        </div>
+    </footer>
+</body>
+</html>

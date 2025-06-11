@@ -1,0 +1,3030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <title>Spice Garden - Authentic Indian Cuisine</title>
+  <meta name="description" content="Spice Garden - Experience authentic Indian cuisine with flavorful curries, tandoori specialties, and traditional dishes in an elegant setting. Reserve a table today!">
+  <meta property="og:title" content="Spice Garden - Authentic Indian Cuisine">
+  <meta property="og:description" content="Experience authentic Indian cuisine with flavorful curries, tandoori specialties, and traditional dishes in an elegant setting. Reserve a table today!">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://spicegarden.com">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="icon" type="image/png" href="AM.jpg">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Remix Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  
+  <!-- Custom Styles -->
+  <style>
+        * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    /* Base Styles */
+    :root {
+      --primary: #D93E30;
+      --primary-light: #F25C4E;
+      --primary-dark: #AB251A;
+      --secondary: #FFB74D;
+      --secondary-light: #FFCC80;
+      --bg-dark: #1E0C0C;
+      --bg-medium: #2D1212;
+      --bg-light: #3D1D1A;
+      --text-light: #F5EFE7;
+      --text-muted: #CAB9A7;
+      --accent-gold: #D4AF37;
+      --accent-gold-light: rgba(212, 175, 55, 0.3);
+      --border-color: rgba(212, 175, 55, 0.3);
+      --green-accent: #0A6B0D;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    html, body {
+      height: 100%;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      line-height: 1.6;
+      overflow-x: hidden;
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48cGF0aCBmaWxsPSIjRDRBRjM3IiBmaWxsLW9wYWNpdHk9IjAuMDUiIGQ9Ik0zMCAzMG0tMjUgMGEyNSwyNSAwIDEsMSA1MCwwYTI1LDI1IDAgMSwxIC01MCwwTTAgMG0xNSAxMEwxMCAyMEwxNSAzMEwyMCA0MEwyNSA1MEwzMCA2MEwzNSA1MEw0MCA0MEw0NSAzMEw1MCAyMEw0NSAxMEw0MCAwTDM1IDEwTDMwIDIwTDI1IDEwTDIwIDBMMTUgMTAiPjwvcGF0aD48L3N2Zz4=');
+      background-attachment: fixed;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+    }
+    
+    a {
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    
+    /* Page Structure */
+    .page-content {
+      flex: 1 0 auto;
+      padding-top: 70px; /* Account for fixed header */
+    }
+    
+    footer {
+      flex-shrink: 0;
+    }
+    
+    /* Utility Classes */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    
+    .flex {
+      display: flex;
+    }
+    
+    .flex-col {
+      flex-direction: column;
+    }
+    
+    .flex-wrap {
+      flex-wrap: wrap;
+    }
+    
+    .items-center {
+      align-items: center;
+    }
+    
+    .justify-center {
+      justify-content: center;
+    }
+    
+    .justify-between {
+      justify-content: space-between;
+    }
+    
+    .space-x-4 > * + * {
+      margin-left: 1rem;
+    }
+    
+    .space-y-2 > * + * {
+      margin-top: 0.5rem;
+    }
+    
+    .grid {
+      display: grid;
+    }
+    
+    .grid-cols-1 {
+      grid-template-columns: 1fr;
+    }
+    
+    .grid-cols-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .grid-cols-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .gap-4 {
+      gap: 1rem;
+    }
+    
+    .gap-8 {
+      gap: 2rem;
+    }
+    
+    .gap-10 {
+      gap: 2.5rem;
+    }
+    
+    .hidden {
+      display: none;
+    }
+    
+    .mt-4 {
+      margin-top: 1rem;
+    }
+    
+    .mt-10 {
+      margin-top: 2.5rem;
+    }
+    
+    .mb-2 {
+      margin-bottom: 0.5rem;
+    }
+    
+    .mb-4 {
+      margin-bottom: 1rem;
+    }
+    
+    .mb-6 {
+      margin-bottom: 1.5rem;
+    }
+    
+    .py-3 {
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+    
+    .py-6 {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+    }
+    
+    .py-10 {
+      padding-top: 2.5rem;
+      padding-bottom: 2.5rem;
+    }
+    
+    .py-20 {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+    
+    .py-16 {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+    
+    .px-4 {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    
+    .px-8 {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+    
+    .rounded-full {
+      border-radius: 9999px;
+    }
+    
+    .rounded-lg {
+      border-radius: 0.5rem;
+    }
+    
+    .rounded-xl {
+      border-radius: 0.75rem;
+    }
+    
+    .text-center {
+      text-align: center;
+    }
+    
+    .text-6xl {
+      font-size: 3.75rem;
+      line-height: 1.1;
+    }
+    
+    .text-5xl {
+      font-size: 3rem;
+      line-height: 1.1;
+    }
+    
+    .text-4xl {
+      font-size: 2.25rem;
+      line-height: 1.2;
+    }
+    
+    .text-3xl {
+      font-size: 1.875rem;
+      line-height: 1.2;
+    }
+    
+    .text-2xl {
+      font-size: 1.5rem;
+      line-height: 1.3;
+    }
+    
+    .text-xl {
+      font-size: 1.25rem;
+      line-height: 1.5;
+    }
+    
+    .text-lg {
+      font-size: 1.125rem;
+      line-height: 1.5;
+    }
+    
+    .text-sm {
+      font-size: 0.875rem;
+      line-height: 1.5;
+    }
+    
+    .font-bold {
+      font-weight: 700;
+    }
+    
+    .font-medium {
+      font-weight: 500;
+    }
+    
+    .tracking-widest {
+      letter-spacing: 0.1em;
+    }
+    
+    .uppercase {
+      text-transform: uppercase;
+    }
+    
+    .text-primary {
+      color: var(--primary);
+    }
+    
+    .text-secondary {
+      color: var(--secondary);
+    }
+    
+    .text-light {
+      color: var(--text-light);
+    }
+    
+    .text-muted {
+      color: var(--text-muted);
+    }
+    
+    .text-gold {
+      color: var(--accent-gold);
+    }
+    
+    .bg-dark {
+      background-color: var(--bg-dark);
+    }
+    
+    .bg-medium {
+      background-color: var(--bg-medium);
+    }
+    
+    .bg-light {
+      background-color: var(--bg-light);
+    }
+    
+    .bg-primary {
+      background-color: var(--primary);
+    }
+    
+    .bg-secondary {
+      background-color: var(--secondary);
+    }
+    
+    .bg-gold {
+      background-color: var(--accent-gold);
+    }
+    
+    .border-t {
+      border-top-width: 1px;
+    }
+    
+    .border-gold {
+      border-color: var(--border-color);
+    }
+    
+    .shadow-lg {
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+    }
+    
+    .shadow-2xl {
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+    
+    .relative {
+      position: relative;
+    }
+    
+    .absolute {
+      position: absolute;
+    }
+    
+    .fixed {
+      position: fixed;
+    }
+    
+    .inset-0 {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+    
+    .top-0 {
+      top: 0;
+    }
+    
+    .left-0 {
+      left: 0;
+    }
+    
+    .right-0 {
+      right: 0;
+    }
+    
+    .z-50 {
+      z-index: 50;
+    }
+    
+    .z-40 {
+      z-index: 40;
+    }
+    
+    .min-h-screen {
+      min-height: 100vh;
+    }
+    
+    .h-1 {
+      height: 0.25rem;
+    }
+    
+    .h-5 {
+      height: 1.25rem;
+    }
+    
+    .h-10 {
+      height: 2.5rem;
+    }
+    
+    .h-14 {
+      height: 3.5rem;
+    }
+    
+    .h-16 {
+      height: 4rem;
+    }
+    
+    .h-96 {
+      height: 24rem;
+    }
+    
+    .w-1 {
+      width: 0.25rem;
+    }
+    
+    .w-5 {
+      width: 1.25rem;
+    }
+    
+    .w-6 {
+      width: 1.5rem;
+    }
+    
+    .w-10 {
+      width: 2.5rem;
+    }
+    
+    .w-14 {
+      width: 3.5rem;
+    }
+    
+    .w-16 {
+      width: 4rem;
+    }
+    
+    .w-20 {
+      width: 5rem;
+    }
+    
+    .w-full {
+      width: 100%;
+    }
+    
+    .max-w-lg {
+      max-width: 32rem;
+    }
+    
+    .max-w-xl {
+      max-width: 36rem;
+    }
+    
+    .max-w-2xl {
+      max-width: 42rem;
+    }
+    
+    .max-w-3xl {
+      max-width: 48rem;
+    }
+    
+    .max-w-4xl {
+      max-width: 56rem;
+    }
+    
+    .transform {
+      transform: translateX(-50%);
+    }
+    
+    .opacity-5 {
+      opacity: 0.05;
+    }
+    
+    .order-1 {
+      order: 1;
+    }
+    
+    .order-2 {
+      order: 2;
+    }
+    
+    .hover-grow {
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    .hover-grow:hover {
+      transform: scale(1.05);
+    }
+    
+    .menu-animation {
+      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+    
+    /* Header Styles */
+    header {
+      padding: 1rem 0;
+      background-color: rgba(30, 12, 12, 0.95);
+      backdrop-filter: blur(5px);
+      border-bottom: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 100;
+    }
+    
+    header.scrolled {
+      padding: 0.6rem 0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-container img {
+      height: 50px;
+      margin-right: 0.75rem;
+    }
+    
+    .logo-text {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.75rem;
+      color: var(--accent-gold);
+      letter-spacing: 1px;
+    }
+    
+    /* Navbar Styles */
+    .nav-link {
+      position: relative;
+      color: var(--text-light);
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-link:hover {
+      color: var(--accent-gold);
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--accent-gold);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+    
+    .nav-link:hover::after {
+      width: 60%;
+    }
+    
+    .nav-link.active {
+      color: var(--accent-gold);
+    }
+    
+    .nav-link.active::after {
+      width: 60%;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 500;
+      text-align: center;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+      background: linear-gradient(45deg, var(--accent-gold), transparent, var(--accent-gold));
+      z-index: -1;
+      animation: rotate 3s linear infinite;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      border-radius: 55px;
+    }
+    
+    .btn:hover::before {
+      opacity: 1;
+    }
+    
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    
+    .btn-primary {
+      background-color: var(--primary);
+      color: var(--text-light);
+      border: 1px solid var(--primary);
+    }
+    
+    .btn-primary:hover {
+      background-color: var(--primary-light);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .btn-secondary {
+      background-color: var(--secondary);
+      color: var(--bg-dark);
+      border: 1px solid var(--secondary);
+    }
+    
+    .btn-secondary:hover {
+      background-color: var(--secondary-light);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .btn-outline {
+      background-color: transparent;
+      border: 1px solid var(--accent-gold);
+      color: var(--accent-gold);
+    }
+    
+    .btn-outline:hover {
+      background-color: var(--accent-gold);
+      color: var(--bg-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .btn-gold {
+      background-color: var(--accent-gold);
+      color: var(--bg-dark);
+      border: 1px solid var(--accent-gold);
+    }
+    
+    .btn-gold:hover {
+      background-color: transparent;
+      color: var(--accent-gold);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Cart Styles */
+    .cart {
+      position: relative;
+    }
+    
+    .cart-icon {
+      position: relative;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: var(--accent-gold);
+      margin-left: 1rem;
+      padding: 0.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .cart-count {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background-color: var(--primary);
+      color: var(--text-light);
+      font-size: 10px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      border: 1px solid var(--bg-dark);
+    }
+    
+    /* Mobile menu button */
+    .menu-btn {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 20px;
+      width: 25px;
+      z-index: 1000;
+    }
+    
+    .menu-btn span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: var(--text-light);
+      transition: all 0.3s ease;
+      transform-origin: center;
+    }
+    
+    .menu-btn.active span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    
+    .menu-btn.active span:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .menu-btn.active span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    /* Mobile Menu */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 100%;
+      height: 100vh;
+      background-color: var(--bg-medium);
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: right 0.5s ease-in-out;
+      overflow-y: auto;
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48cGF0aCBmaWxsPSIjRDRBRjM3IiBmaWxsLW9wYWNpdHk9IjAuMDgiIGQ9Ik0zMCAzMG0tMjUgMGEyNSwyNSAwIDEsMSA1MCwwYTI1LDI1IDAgMSwxIC01MCwwTTAgMG0xNSAxMEwxMCAyMEwxNSAzMEwyMCA0MEwyNSA1MEwzMCA2MEwzNSA1MEw0MCA0MEw0NSAzMEw1MCAyMEw0NSAxMEw0MCAwTDM1IDEwTDMwIDIwTDI1IDEwTDIwIDBMMTUgMTAiPjwvcGF0aD48L3N2Zz4=');
+    }
+    
+    .mobile-menu.active {
+      right: 0;
+    }
+    
+    .mobile-menu-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 30px;
+      cursor: pointer;
+      color: var(--text-light);
+    }
+    
+    .mobile-menu-link {
+      color: var(--text-light);
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 0.75rem 0;
+      transition: all 0.3s ease;
+      padding: 0.5rem 2rem;
+      border-bottom: 1px solid transparent;
+    }
+    
+    .mobile-menu-link:hover, 
+    .mobile-menu-link.active {
+      color: var(--accent-gold);
+      border-bottom: 1px solid var(--accent-gold);
+    }
+    
+    /* Hero Section */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background-color: var(--bg-dark);
+      overflow: hidden;
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48cGF0aCBmaWxsPSIjRDRBRjM3IiBmaWxsLW9wYWNpdHk9IjAuMSIgZD0iTTMwIDMwbS0yNSAwYTI1LDI1IDAgMSwxIDUwLDBhMjUsMjUgMCAxLDEgLTUwLDBNMCAwbTE1IDEwTDEwIDIwTDE1IDMwTDIwIDQwTDI1IDUwTDMwIDYwTDM1IDUwTDQwIDQwTDQ1IDMwTDUwIDIwTDQ1IDEwTDQwIDBMMzUgMTBMMzAgMjBMMjUgMTBMMjAgMEwxNSAxMCI+PC9wYXRoPjwvc3ZnPg==');
+    }
+    
+    .hero-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.4;
+      z-index: 0;
+    }
+    
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(30, 12, 12, 0.5), rgba(30, 12, 12, 0.8));
+      z-index: 1;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 2rem;
+    }
+    
+    .hero-badge {
+      display: inline-block;
+      background-color: var(--primary);
+      color: var(--text-light);
+      padding: 0.5rem 1.25rem;
+      border-radius: 30px;
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.875rem;
+      animation: fadeIn 1s forwards 0.2s;
+      opacity: 0;
+    }
+    
+    .hero-title {
+      font-size: 3.5rem;
+      color: var(--text-light);
+      margin-bottom: 1.5rem;
+      line-height: 1.1;
+      animation: fadeInUp 1s forwards 0.5s;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: fadeInUp 1s forwards 0.7s;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+      animation: fadeInUp 1s forwards 0.9s;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Section Heading */
+    .section-heading {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .section-heading .section-badge {
+      display: inline-block;
+      background-color: var(--bg-light);
+      color: var(--accent-gold);
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.8rem;
+      border: 1px solid var(--accent-gold-light);
+    }
+    
+    .section-heading h2 {
+      color: var(--accent-gold);
+      font-size: 2.5rem;
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .section-heading .divider {
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(to right, var(--primary), var(--accent-gold));
+      margin: 1.25rem auto 1.5rem;
+      border-radius: 3px;
+    }
+    
+    .section-heading p {
+      max-width: 700px;
+      margin: 0 auto;
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+    
+    /* Decorative Elements */
+    .mandala {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNDAgMjQwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNENEFGMzciIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLW9wYWNpdHk9IjAuMiIgZD0iTTEyMCAxMjBtLTExMCAwYTExMCwxMTAgMCAxLDAgMjIwLDBhMTEwLDExMCAwIDEsMCAtMjIwLDBNMTIwIDEyMG0tOTAgMGE5MCw5MCAwIDEsMCAxODAsMGE5MCw5MCAwIDEsMCAtMTgwLDBNMTIwIDEyMG0tNzAgMGE3MCw3MCAwIDEsMCAxNDAsMGE3MCw3MCAwIDEsMCAtMTQwLDBNMTIwIDEyMG0tNTAgMGE1MCw1MCAwIDEsMCAxMDAsMGE1MCw1MCAwIDEsMCAtMTAwLDBNMTIwIDEyMG0tMzAgMGEzMCwzMCAwIDEsMCAxMCwwYTMwLDMwIDAgMSwwIC02MCwwIj48L3BhdGg+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRDRBRjM3IiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1vcGFjaXR5PSIwLjIiIGQ9Ik0xMjAgMTIwTDEyMCAxME0xMjAgMTIwTDE3NC42NCAyNS45M00xMjAgMTIwTDIxNC4wNyA2NS4zNk0xMjAgMTIwTDIzMCAxMjBNMTIwIDEyMEwyMTQuMDcgMTc0LjY0TTEyMCAxMjBMMTc0LjY0IDIxNC4wN00xMjAgMTIwTDEyMCAyMzBNMTIwIDEyMEw2NS4zNiAyMTQuMDdNMTIwIDEyMEwyNS45MyAxNzQuNjRNMTIwIDEyMEwxMCAxMjBNMTIwIDEyMEwyNS45MyA2NS4zNk0xMjAgMTIwTDY1LjM2IDI1LjkzIj48L3BhdGg+PC9zdmc+');
+      opacity: 0.15;
+      z-index: 0;
+    }
+    
+    .mandala-top-right {
+      top: -150px;
+      right: -150px;
+    }
+    
+    .mandala-bottom-left {
+      bottom: -150px;
+      left: -150px;
+    }
+    
+    .divider {
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(to right, var(--primary), var(--accent-gold));
+      margin: 1rem auto 2rem;
+      border-radius: 3px;
+    }
+    
+    /* Menu Categories */
+    .category-tabs {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 3rem;
+    }
+    
+    .category-tab {
+      background-color: var(--bg-medium);
+      color: var(--text-light);
+      border: 1px solid var(--accent-gold-light);
+      padding: 0.75rem 1.5rem;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+    
+    .category-tab:hover {
+      background-color: var(--bg-light);
+    }
+    
+    .category-tab.active {
+      background-color: var(--accent-gold);
+      color: var(--bg-dark);
+      border-color: var(--accent-gold);
+      font-weight: 600;
+    }
+    
+    /* Menu Items */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+    
+    .menu-item {
+      background-color: var(--bg-medium);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+      transition: all 0.4s ease;
+      border: 1px solid var(--accent-gold-light);
+      position: relative;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .menu-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+    }
+    
+    .menu-image {
+      height: 220px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .menu-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .menu-item:hover .menu-image img {
+      transform: scale(1.1);
+    }
+    
+    .menu-tag {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: var(--primary);
+      color: var(--text-light);
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      z-index: 2;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .menu-tag.veg {
+      background-color: var(--green-accent);
+    }
+    
+    .menu-content {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    
+    .menu-title {
+      font-size: 1.25rem;
+      color: var(--accent-gold);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      line-height: 1.3;
+    }
+    
+    .menu-price {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-light);
+      background-color: var(--bg-light);
+      padding: 0.35rem 0.75rem;
+      border-radius: 5px;
+      margin-left: 0.5rem;
+    }
+    
+    .menu-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+    
+    .menu-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+    
+    .menu-meta-item {
+      display: flex;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    
+    .menu-meta-item i {
+      margin-right: 0.35rem;
+      color: var(--accent-gold);
+    }
+    
+    .menu-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+      padding-top: 1rem;
+      border-top: 1px dashed var(--accent-gold-light);
+    }
+    
+    .rating {
+      display: flex;
+      align-items: center;
+    }
+    
+    .rating-stars {
+      color: var(--secondary);
+      margin-right: 0.5rem;
+    }
+    
+    .rating-count {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    
+    /* Order button */
+    .order-btn {
+      width: 100%;
+      padding: 0.85rem;
+      background-color: var(--primary);
+      color: var(--text-light);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .order-btn i {
+      margin-right: 0.5rem;
+      font-size: 1.1rem;
+    }
+    
+    .order-btn:hover {
+      background-color: var(--accent-gold);
+      color: var(--bg-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Toast Notification */
+    .toast-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+    }
+    
+    .toast {
+      background-color: var(--bg-medium);
+      color: var(--text-light);
+      padding: 1rem 1.25rem;
+      border-radius: 8px;
+      margin-top: 0.75rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      border-left: 4px solid var(--accent-gold);
+      transform: translateX(150%);
+      transition: transform 0.3s ease;
+      display: flex;
+      align-items: center;
+      min-width: 300px;
+    }
+    
+    .toast.show {
+      transform: translateX(0);
+    }
+    
+    .toast-icon {
+      margin-right: 0.75rem;
+      color: var(--accent-gold);
+      font-size: 1.5rem;
+    }
+    
+    .toast-content {
+      flex: 1;
+    }
+    
+    .toast-title {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+    
+    .toast-message {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    
+    .toast-close {
+      margin-left: 1rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 1.25rem;
+    }
+    
+    .toast-close:hover {
+      color: var(--text-light);
+    }
+    
+    /* Cart Modal */
+    .cart-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 1000;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(5px);
+    }
+    
+    .cart-modal.show {
+      display: flex;
+      animation: fadeIn 0.3s ease;
+    }
+    
+    .cart-container {
+      background-color: var(--bg-medium);
+      width: 90%;
+      max-width: 550px;
+      max-height: 90vh;
+      overflow-y: auto;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--accent-gold-light);
+      animation: fadeInUp 0.4s ease;
+      position: relative;
+    }
+    
+    .cart-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(to right, var(--primary), var(--accent-gold), var(--primary));
+      border-radius: 12px 12px 0 0;
+    }
+    
+    .cart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--accent-gold-light);
+    }
+    
+    .cart-title {
+      font-size: 1.75rem;
+      color: var(--accent-gold);
+      margin: 0;
+      display: flex;
+      align-items: center;
+    }
+    
+    .cart-title i {
+      margin-right: 0.75rem;
+    }
+    
+    .cart-close {
+      font-size: 1.5rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      background: var(--bg-dark);
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+    }
+    
+    .cart-close:hover {
+      color: var(--primary);
+      background: var(--bg-light);
+    }
+    
+    .cart-items {
+      margin-bottom: 1.5rem;
+    }
+    
+    .cart-empty {
+      text-align: center;
+      padding: 2.5rem 0;
+    }
+    
+    .cart-empty i {
+      font-size: 3.5rem;
+      color: var(--accent-gold-light);
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+    
+    .cart-empty p {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+    }
+    
+    .cart-item {
+      display: flex;
+      align-items: center;
+      padding: 1.25rem 0;
+      border-bottom: 1px dashed var(--accent-gold-light);
+    }
+    
+    .cart-item:last-child {
+      border-bottom: none;
+    }
+    
+    .cart-item-img {
+      width: 70px;
+      height: 70px;
+      border-radius: 8px;
+      object-fit: cover;
+      margin-right: 1.25rem;
+      border: 1px solid var(--accent-gold-light);
+    }
+    
+    .cart-item-details {
+      flex: 1;
+    }
+    
+    .cart-item-name {
+      font-size: 1.1rem;
+      color: var(--text-light);
+      margin-bottom: 0.35rem;
+      font-weight: 500;
+    }
+    
+    .cart-item-price {
+      font-size: 1rem;
+      color: var(--accent-gold);
+      font-weight: 600;
+    }
+    
+    .cart-item-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.75rem;
+    }
+    
+    .cart-item-quantity {
+      display: flex;
+      align-items: center;
+      background-color: var(--bg-dark);
+      padding: 0.25rem;
+      border-radius: 6px;
+      border: 1px solid var(--accent-gold-light);
+    }
+    
+    .cart-item-quantity button {
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 1rem;
+    }
+    
+    .cart-item-quantity button:hover {
+      background-color: var(--primary);
+    }
+    
+    .cart-item-quantity span {
+      margin: 0 0.75rem;
+      min-width: 1.5rem;
+      text-align: center;
+      font-weight: 500;
+    }
+    
+    .cart-item-remove {
+      color: var(--primary);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 1.1rem;
+      background-color: var(--bg-dark);
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+    }
+    
+    .cart-item-remove:hover {
+      color: var(--primary-light);
+      background-color: var(--bg-light);
+    }
+    
+    .cart-footer {
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--accent-gold-light);
+    }
+    
+    .cart-subtotal {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+      background-color: var(--bg-dark);
+      padding: 1rem 1.25rem;
+      border-radius: 8px;
+      border: 1px solid var(--accent-gold-light);
+    }
+    
+    .cart-subtotal-text {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+    }
+    
+    .cart-subtotal-price {
+      font-size: 1.25rem;
+      color: var(--accent-gold);
+      font-weight: 600;
+    }
+    
+    .cart-actions {
+      display: flex;
+      gap: 1rem;
+    }
+    
+    .cart-actions button {
+      flex: 1;
+      padding: 0.85rem;
+      border: none;
+      border-radius: 8px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .cart-actions button i {
+      margin-right: 0.5rem;
+    }
+    
+    .cart-clear-btn {
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      border: 1px solid var(--accent-gold-light);
+    }
+    
+    .cart-clear-btn:hover {
+      background-color: var(--bg-dark);
+    }
+    
+    .cart-checkout-btn {
+      background-color: var(--accent-gold);
+      color: var(--bg-dark);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .cart-checkout-btn:hover {
+      background-color: var(--primary);
+      color: var(--text-light);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Timeline Styles - Updated */
+    .timeline-section {
+      padding: 5rem 0;
+      position: relative;
+      overflow: hidden;
+      background-color: var(--bg-medium);
+    }
+    
+    .timeline-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48cGF0aCBmaWxsPSIjRDRBRjM3IiBmaWxsLW9wYWNpdHk9IjAuMDUiIGQ9Ik0zMCAzMG0tMjUgMGEyNSwyNSAwIDEsMSA1MCwwYTI1LDI1IDAgMSwxIC01MCwwTTAgMG0xNSAxMEwxMCAyMEwxNSAzMEwyMCA0MEwyNSA1MEwzMCA2MEwzNSA1MEw0MCA0MEw0NSAzMEw1MCAyMEw0NSAxMEw0MCAwTDM1IDEwTDMwIDIwTDI1IDEwTDIwIDBMMTUgMTAiPjwvcGF0aD48L3N2Zz4=');
+      opacity: 0.05;
+      z-index: 0;
+    }
+    
+    .timeline {
+      position: relative;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem 0;
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 3px;
+      background: linear-gradient(to bottom, var(--primary-dark), var(--accent-gold), var(--primary-dark));
+      transform: translateX(-50%);
+      border-radius: 3px;
+    }
+    
+    .timeline-item {
+      position: relative;
+      margin-bottom: 4rem;
+      width: 100%;
+      display: flex;
+    }
+    
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+    
+    .timeline-content {
+      width: 45%;
+      padding: 1.75rem;
+      background-color: var(--bg-dark);
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      position: relative;
+      z-index: 1;
+      border: 1px solid var(--accent-gold-light);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .timeline-content:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+    }
+    
+    .timeline-dot {
+      position: absolute;
+      top: 20px;
+      width: 22px;
+      height: 22px;
+      background-color: var(--accent-gold);
+      border-radius: 50%;
+      box-shadow: 0 0 0 4px var(--bg-medium), 0 0 0 6px rgba(212, 175, 55, 0.3);
+      z-index: 2;
+    }
+    
+    .timeline-dot::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 40px;
+      height: 2px;
+      background-color: var(--accent-gold-light);
+      z-index: 1;
+    }
+    
+    .timeline-left {
+      justify-content: flex-start;
+    }
+    
+    .timeline-right {
+      justify-content: flex-end;
+    }
+    
+    .timeline-left .timeline-dot {
+      right: -55px;
+    }
+    
+    .timeline-right .timeline-dot {
+      left: -55px;
+    }
+    
+    .timeline-left .timeline-dot::before {
+      left: 100%;
+      margin-left: 5px;
+    }
+    
+    .timeline-right .timeline-dot::before {
+      right: 100%;
+      margin-right: 5px;
+    }
+    
+    .timeline-year {
+      position: absolute;
+      top: 12px;
+      background-color: var(--primary);
+      color: var(--text-light);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      z-index: 2;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+      border: 1px solid var(--accent-gold-light);
+    }
+    
+    .timeline-left .timeline-year {
+      right: -130px;
+    }
+    
+    .timeline-right .timeline-year {
+      left: -130px;
+    }
+    
+    .timeline-title {
+      color: var(--accent-gold);
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px dashed var(--accent-gold-light);
+    }
+    
+    .timeline-description {
+      color: var(--text-light);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    
+    .timeline-icon {
+      color: var(--primary);
+      font-size: 1.25rem;
+      margin-right: 0.5rem;
+      vertical-align: middle;
+    }
+    
+    /* About Section */
+    .about-section {
+      position: relative;
+      padding: 5rem 0;
+      overflow: hidden;
+      background-color: var(--bg-dark);
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48cGF0aCBmaWxsPSIjRDRBRjM3IiBmaWxsLW9wYWNpdHk9IjAuMDgiIGQ9Ik0zMCAzMG0tMjUgMGEyNSwyNSAwIDEsMSA1MCwwYTI1LDI1IDAgMSwxIC01MCwwTTAgMG0xNSAxMEwxMCAyMEwxNSAzMEwyMCA0MEwyNSA1MEwzMCA2MEwzNSA1MEw0MCA0MEw0NSAzMEw1MCAyMEw0NSAxMEw0MCAwTDM1IDEwTDMwIDIwTDI1IDEwTDIwIDBMMTUgMTAiPjwvcGF0aD48L3N2Zz4=');
+    }
+    
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    
+    .about-text {
+      padding-right: 2rem;
+    }
+    
+    .about-title {
+      font-size: 2.25rem;
+      color: var(--accent-gold);
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+    
+    .about-description {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+    
+    .about-features {
+      margin-top: 2rem;
+    }
+    
+    .about-feature {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1.25rem;
+    }
+    
+    .about-feature-icon {
+      width: 40px;
+      height: 40px;
+      background-color: var(--bg-light);
+      color: var(--accent-gold);
+      border-radius: 50%;
+      margin-right: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      border: 1px solid var(--accent-gold-light);
+    }
+    
+    .about-feature-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-light);
+      margin-bottom: 0.35rem;
+    }
+    
+    .about-feature-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    
+    .about-image {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 450px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      border: 3px solid var(--accent-gold-light);
+    }
+    
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s ease;
+    }
+    
+    .about-image:hover img {
+      transform: scale(1.05);
+    }
+    
+    .about-image::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to top, rgba(30, 12, 12, 0.6), transparent);
+      z-index: 1;
+    }
+    
+    .about-image-text {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 2rem;
+      z-index: 2;
+    }
+    
+    .about-image-title {
+      font-size: 1.5rem;
+      color: var(--accent-gold);
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    }
+    
+    .about-image-subtitle {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    }
+    
+    /* Back to top button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background-color: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-light);
+      border: 2px solid var(--accent-gold-light);
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      z-index: 99;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
+    
+    .back-to-top.show {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    
+    .back-to-top:hover {
+      background-color: var(--accent-gold);
+      color: var(--bg-dark);
+      transform: translateY(-5px);
+    }
+    
+    /* Footer Styles */
+    .footer {
+      background-color: var(--bg-medium);
+      position: relative;
+      border-top: 1px solid var(--accent-gold-light);
+      overflow: hidden;
+      padding: 5rem 0 2rem;
+    }
+    
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(to right, var(--primary-dark), var(--accent-gold), var(--primary-dark));
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    
+    .footer-column h3 {
+      color: var(--accent-gold);
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-bottom: 0.75rem;
+    }
+    
+    .footer-column h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background: linear-gradient(to right, var(--primary), var(--accent-gold));
+      border-radius: 2px;
+    }
+    
+    .footer-about {
+      margin-bottom: 1.5rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 0.75rem;
+    }
+    
+    .social-link {
+      width: 40px;
+      height: 40px;
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      border: 1px solid var(--accent-gold-light);
+    }
+    
+    .social-link:hover {
+      background-color: var(--accent-gold);
+      color: var(--bg-dark);
+      transform: translateY(-3px);
+    }
+    
+    .footer-links {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .footer-links li {
+      margin-bottom: 0.75rem;
+    }
+    
+    .footer-link {
+      color: var(--text-muted);
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+    }
+    
+    .footer-link i {
+      margin-right: 0.5rem;
+      color: var(--primary);
+      font-size: 0.8rem;
+    }
+    
+    .footer-link:hover {
+      color: var(--accent-gold);
+      transform: translateX(5px);
+    }
+    
+    .contact-item {
+      display: flex;
+      margin-bottom: 1.25rem;
+      color: var(--text-muted);
+    }
+    
+    .contact-icon {
+      margin-right: 1rem;
+      color: var(--accent-gold);
+      font-size: 1.2rem;
+    }
+    
+    .opening-hours {
+      margin-bottom: 0.75rem;
+      color: var(--text-muted);
+    }
+    
+    .opening-hours span {
+      color: var(--text-light);
+      margin-left: 0.5rem;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid var(--accent-gold-light);
+    }
+    
+    .copyright {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+    
+    /* Media Queries */
+
+   
+    
+      
+      .about-content {
+        grid-template-columns: 1fr;
+      }
+      
+      .about-text {
+        padding-right: 0;
+        order: 2;
+      }
+      
+      .about-image {
+        height: 400px;
+        order: 1;
+      }
+    
+    
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      
+      .hero-subtitle {
+        font-size: 1.1rem;
+      }
+      
+      .hero-buttons {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .section-heading h2 {
+        font-size: 2rem;
+      }
+      
+      .menu-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .hero-badge {
+        font-size: 0.75rem;
+      }
+      
+      .hero-title {
+        font-size: 2rem;
+      }
+      
+      .category-tabs {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+        justify-content: flex-start;
+      }
+      
+      .category-tab {
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+      
+      .timeline-content {
+        width: calc(100% - 60px);
+        margin-left: 60px;
+      }
+    }
+    .hello{
+      
+    font-family: 'Palatino', 'Book Antiqua', serif;
+    line-height: 1.5;
+    color: #4a2c1b;
+    background-color: #f8f2e5;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48cGF0dGVybiBpZD0icGF0dGVybiIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIj48cGF0aCBmaWxsPSIjN2EzNDEyIiBmaWxsLW9wYWNpdHk9IjAuMDUiIGQ9Ik0wIDBoMTB2MTBIMHoiIC8+PHBhdGggZmlsbD0iIzdhMzQxMiIgZmlsbC1vcGFjaXR5PSIwLjAyIiBkPSJNMCAwaDV2NUgwek01IDVoNXY1SDV6IiAvPjwvcGF0dGVybj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIiAvPjwvc3ZnPg==');
+ 
+  
+    }
+    .flex items-center{
+      gap:0px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop">
+    <i class="ri-arrow-up-line"></i>
+  </button>
+
+  <!-- Toast Notifications -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Cart Modal -->
+  <div class="cart-modal" id="cartModal">
+    <div class="cart-container">
+      <div class="cart-header">
+        <h3 class="cart-title"><i class="ri-shopping-cart-2-line"></i> Your Order</h3>
+        <span class="cart-close" id="closeCart"><i class="ri-close-line"></i></span>
+      </div>
+      <div class="cart-items" id="cartItems">
+        <!-- Cart items will be dynamically added here -->
+      </div>
+      <div class="cart-footer">
+        <div class="cart-subtotal">
+          <span class="cart-subtotal-text">Subtotal:</span>
+          <span class="cart-subtotal-price" id="cartSubtotal">₹0.00</span>
+        </div>
+        <div class="cart-actions">
+          <button class="cart-clear-btn" id="clearCart"><i class="ri-delete-bin-6-line"></i> Clear Cart</button>
+          <button class="cart-checkout-btn" id="checkoutBtn"><i class="ri-shopping-bag-line"></i> Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header id="header">
+    <div class="container">
+      <div class="flex justify-between items-center">
+        <div class="logo-container">
+          <a href="#" class="logo-text">Spice Garden</a>
+        </div>
+        
+        <nav class="hidden md:flex">
+          <a href="#home" class="nav-link active">Home</a>
+          <a href="#menu" class="nav-link">Menu</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#journey" class="nav-link">Our Journey</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+        
+        <div class="flex items-center">
+          <a href="#reservations" class="btn btn-outline hidden md:block">Book a Table</a>
+          
+          <div class="cart" id="cartIcon">
+            <div class="cart-icon">
+              <i class="ri-shopping-cart-2-line"></i>
+              <span class="cart-count" id="cartCount">0</span>
+            </div>
+          </div>
+          
+          <button class="menu-btn md:hidden" id="menuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <i class="ri-close-line mobile-menu-close" id="closeMenu"></i>
+    <a href="#home" class="mobile-menu-link active">Home</a>
+    <a href="#menu" class="mobile-menu-link">Menu</a>
+    <a href="#about" class="mobile-menu-link">About</a>
+    <a href="#journey" class="mobile-menu-link">Our Journey</a>
+    <a href="#contact" class="mobile-menu-link">Contact</a>
+    <a href="#reservations" class="btn btn-outline mt-4">Book a Table</a>
+  </div>
+
+  <div class="page-content">
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <img src="https://images.unsplash.com/photo-1534939561126-855b8675edd7?q=80&w=1920&auto=format&fit=crop" alt="Indian cuisine spread" class="hero-image">
+      <div class="hero-overlay"></div>
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <span class="hero-badge">Authentic Indian Restaurant</span>
+            <h1 class="hero-title">Experience the Royal Flavors of India</h1>
+            <p class="hero-subtitle">Savor the authentic taste of Indian cuisine with our carefully crafted dishes, prepared with traditional spices and cooking techniques.</p>
+            <div class="hero-buttons">
+              <a href="#menu" class="btn btn-primary">Explore Our Menu</a>
+              <a href="#reservations" class="btn btn-outline">Book a Table</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mandala mandala-top-right"></div>
+      <div class="mandala mandala-bottom-left"></div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="py-20" id="menu">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-badge">Our Specialties</span>
+          <h2>Delicious Menu</h2>
+          <div class="divider"></div>
+          <p>Explore our extensive menu featuring authentic Indian dishes prepared with fresh ingredients and traditional spices, offering a true taste of India's diverse culinary heritage.</p>
+        </div>
+
+        <div class="category-tabs" id="categoryTabs">
+          <button class="category-tab active" data-category="all">All Items</button>
+          <button class="category-tab" data-category="starters">Starters</button>
+          <button class="category-tab" data-category="mains">Main Course</button>
+          <button class="category-tab" data-category="breads">Breads</button>
+          <button class="category-tab" data-category="desserts">Desserts</button>
+          <button class="category-tab" data-category="beverages">Beverages</button>
+        </div>
+
+        <div class="menu-grid" id="menuGrid">
+          <!-- Menu Item 1 -->
+          <div class="menu-item" data-category="starters">
+            <div class="menu-image">
+              <img src="https://tse3.mm.bing.net/th?id=OIP.nPpJtaQydJLMElKnJQugPAHaKX&cb=iwp1&w=1600&h=2240&rs=1&pid=ImgDetMain" alt="Vegetable Samosa">
+              <span class="menu-tag veg">Vegetarian</span>
+            </div>
+            <div class="menu-content">
+              <h3 class="menu-title">
+                Vegetable Samosa
+                <span class="menu-price">₹120</span>
+              </h3>
+              <p class="menu-desc">Crispy pastry filled with spiced potatoes, peas, and aromatic spices, served with mint and tamarind chutneys.</p>
+              <div class="menu-meta">
+                <span class="menu-meta-item"><i class="ri-fire-line"></i> Spice Level: Medium</span>
+              </div>
+              <div class="menu-footer">
+                <div class="rating">
+                  <div class="rating-stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-half-line"></i>
+                  </div>
+                  <span class="rating-count">256 ratings</span>
+                </div>
+              </div>
+              <button class="order-btn" data-id="1" data-name="Vegetable Samosa" data-price="120" data-image="https://images.unsplash.com/photo-1626057622682-17033cdb099e?q=80&w=800&auto=format&fit=crop">
+                <i class="ri-shopping-cart-add-line"></i> Add to Order
+              </button>
+            </div>
+          </div>
+
+          <!-- Menu Item 2 -->
+          <div class="menu-item" data-category="mains">
+            <div class="menu-image">
+              <img src="https://th.bing.com/th/id/OIP.t8fjuBtoCx7eoPznO9wgzgHaHa?cb=iwp1&rs=1&pid=ImgDetMain" alt="Butter Chicken">
+              <span class="menu-tag">Non-Veg</span>
+            </div>
+            <div class="menu-content">
+              <h3 class="menu-title">
+                Butter Chicken
+                <span class="menu-price">₹320</span>
+              </h3>
+              <p class="menu-desc">Tender pieces of tandoori chicken cooked in a rich tomato and butter gravy with aromatic spices and cream.</p>
+              <div class="menu-meta">
+                <span class="menu-meta-item"><i class="ri-fire-line"></i> Spice Level: Medium</span>
+              </div>
+              <div class="menu-footer">
+                <div class="rating">
+                  <div class="rating-stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                  </div>
+                  <span class="rating-count">320 ratings</span>
+                </div>
+              </div>
+              <button class="order-btn" data-id="2" data-name="Butter Chicken" data-price="320" data-image="https://images.unsplash.com/photo-1585937421612-70a008356c36?q=80&w=800&auto=format&fit=crop">
+                <i class="ri-shopping-cart-add-line"></i> Add to Order
+              </button>
+            </div>
+          </div>
+
+          <!-- Menu Item 3 -->
+          <div class="menu-item" data-category="mains">
+            <div class="menu-image">
+              <img src="https://images.unsplash.com/photo-1631452180539-96aca7d48617?q=80&w=800&auto=format&fit=crop" alt="Paneer Tikka Masala">
+              <span class="menu-tag veg">Vegetarian</span>
+            </div>
+            <div class="menu-content">
+              <h3 class="menu-title">
+                Paneer Tikka Masala
+                <span class="menu-price">₹280</span>
+              </h3>
+              <p class="menu-desc">Grilled cottage cheese cubes in a spiced tomato gravy, perfect with naan or rice, a vegetarian favorite.</p>
+              <div class="menu-meta">
+                <span class="menu-meta-item"><i class="ri-fire-line"></i> Spice Level: Medium</span>
+              </div>
+              <div class="menu-footer">
+                <div class="rating">
+                  <div class="rating-stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-line"></i>
+                  </div>
+                  <span class="rating-count">286 ratings</span>
+                </div>
+              </div>
+              <button class="order-btn" data-id="3" data-name="Paneer Tikka Masala" data-price="280" data-image="https://images.unsplash.com/photo-1631452180539-96aca7d48617?q=80&w=800&auto=format&fit=crop">
+                <i class="ri-shopping-cart-add-line"></i> Add to Order
+              </button>
+            </div>
+          </div>
+
+          <!-- Menu Item 4 -->
+          <div class="menu-item" data-category="breads">
+            <div class="menu-image">
+              <img src="https://images.unsplash.com/photo-1633896949673-1eb9d131a9b4?q=80&w=800&auto=format&fit=crop" alt="Garlic Naan">
+              <span class="menu-tag veg">Vegetarian</span>
+            </div>
+            <div class="menu-content">
+              <h3 class="menu-title">
+                Garlic Naan
+                <span class="menu-price">₹80</span>
+              </h3>
+              <p class="menu-desc">Soft and fluffy leavened flatbread topped with minced garlic and butter, baked in a tandoor, perfect for scooping up curries.</p>
+              <div class="menu-meta">
+                <span class="menu-meta-item"><i class="ri-fire-line"></i> Freshly Baked</span>
+              </div>
+              <div class="menu-footer">
+                <div class="rating">
+                  <div class="rating-stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-half-line"></i>
+                  </div>
+                  <span class="rating-count">215 ratings</span>
+                </div>
+              </div>
+              <button class="order-btn" data-id="4" data-name="Garlic Naan" data-price="80" data-image="https://images.unsplash.com/photo-1633896949673-1eb9d131a9b4?q=80&w=800&auto=format&fit=crop">
+                <i class="ri-shopping-cart-add-line"></i> Add to Order
+              </button>
+            </div>
+          </div>
+
+          <!-- Menu Item 5 -->
+          <div class="menu-item" data-category="desserts">
+            <div class="menu-image">
+              <img src="https://tse1.mm.bing.net/th?id=OIP.aBAGIPq-MtihLTy7z3bPggHaGe&cb=iwp1&w=2048&h=1792&rs=1&pid=ImgDetMain" alt="Gulab Jamun">
+              <span class="menu-tag veg">Vegetarian</span>
+            </div>
+            <div class="menu-content">
+              <h3 class="menu-title">
+                Gulab Jamun
+                <span class="menu-price">₹140</span>
+              </h3>
+              <p class="menu-desc">Soft, melt-in-your-mouth milk solids dumplings soaked in aromatic rose and cardamom flavored sugar syrup.</p>
+              <div class="menu-meta">
+                <span class="menu-meta-item"><i class="ri-heart-line"></i> House Specialty</span>
+              </div>
+              <div class="menu-footer">
+                <div class="rating">
+                  <div class="rating-stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                  </div>
+                  <span class="rating-count">302 ratings</span>
+                </div>
+              </div>
+              <button class="order-btn" data-id="5" data-name="Gulab Jamun" data-price="140" data-image="https://images.unsplash.com/photo-1624833715557-922eaea89cf0?q=80&w=800&auto=format&fit=crop">
+                <i class="ri-shopping-cart-add-line"></i> Add to Order
+              </button>
+            </div>
+          </div>
+          <div class="menu-item" data-category="starters">
+            <div class="menu-image">
+              <img src="https://www.licious.in/blog/wp-content/uploads/2022/08/Shutterstock_1508653862.jpg" alt="Gulab Jamun">
+              <span class="menu-tag">Non-veg</span>
+            </div>
+            <div class="menu-content">
+              <h3 class="menu-title">
+                Chicken Samosa
+                <span class="menu-price">₹180</span>
+              </h3>
+              <p class="menu-desc">Crispy, golden pastry parcels filled with spiced minced chicken, bursting with savory flavor in every bite.</p>
+              <div class="menu-meta">
+                <span class="menu-meta-item"><i class="ri-heart-line"></i> House Specialty</span>
+              </div>
+              <div class="menu-footer">
+                <div class="rating">
+                  <div class="rating-stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                  </div>
+                  <span class="rating-count">400 ratings</span>
+                </div>
+              </div>
+              <button class="order-btn" data-id="5" data-name="Gulab Jamun" data-price="140" data-image="https://images.unsplash.com/photo-1624833715557-922eaea89cf0?q=80&w=800&auto=format&fit=crop">
+                <i class="ri-shopping-cart-add-line"></i> Add to Order
+              </button>
+            </div>
+          </div>
+
+          <div class="menu-item" data-category="mains">
+            <div class="menu-image">
+              <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2022/09/kolhapuri-chicken-recipe.jpg" alt="Gulab Jamun">
+              <span class="menu-tag">Non-veg</span>
+            </div>
+            <div class="menu-content">
+              <h3 class="menu-title">
+               chicken kolapuri
+                <span class="menu-price">₹200</span>
+              </h3>
+              <p class="menu-desc">Tender, spice-infused chicken simmered in a bold and fiery Kolhapuri masala, rich with roasted coconut and aromatic Indian spices.</p>
+              <div class="menu-meta">
+                <span class="menu-meta-item"><i class="ri-heart-line"></i> House Specialty</span>
+              </div>
+              <div class="menu-footer">
+                <div class="rating">
+                  <div class="rating-stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                  </div>
+                  <span class="rating-count">1000 ratings</span>
+                </div>
+              </div>
+              <button class="order-btn" data-id="5" data-name="Gulab Jamun" data-price="140" data-image="https://images.unsplash.com/photo-1624833715557-922eaea89cf0?q=80&w=800&auto=format&fit=crop">
+                <i class="ri-shopping-cart-add-line"></i> Add to Order
+              </button>
+            </div>
+          </div>
+          <div class="menu-item" data-category="mains">
+            <div class="menu-image">
+              <img src="https://th.bing.com/th/id/OIP.1YQjt9OPUykL_hqhVddB1AHaE8?cb=iwp1&rs=1&pid=ImgDetMain" alt="Gulab Jamun">
+              <span class="menu-tag veg">Vegetarian</span>
+            </div>
+            <div class="menu-content">
+              <h3 class="menu-title">
+                Mushroom Biryani
+                <span class="menu-price">₹140</span>
+              </h3>
+              <p class="menu-desc">Fragrant basmati rice layered with succulent mushrooms, slow-cooked in a medley of warm spices, herbs, and saffron for a rich, aromatic experience.</p>
+              <div class="menu-meta">
+                <span class="menu-meta-item"><i class="ri-heart-line"></i> House Specialty</span>
+              </div>
+              <div class="menu-footer">
+                <div class="rating">
+                  <div class="rating-stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                  </div>
+                  <span class="rating-count">298 ratings</span>
+                </div>
+              </div>
+              <button class="order-btn" data-id="5" data-name="Gulab Jamun" data-price="140" data-image="https://images.unsplash.com/photo-1624833715557-922eaea89cf0?q=80&w=800&auto=format&fit=crop">
+                <i class="ri-shopping-cart-add-line"></i> Add to Order
+              </button>
+            </div>
+          </div>
+
+
+
+          <!-- Menu Item 6 -->
+          <div class="menu-item" data-category="beverages">
+            <div class="menu-image">
+              <img src="https://images.unsplash.com/photo-1571705042748-55feda1cfadc?q=80&w=800&auto=format&fit=crop" alt="Masala Chai">
+              <span class="menu-tag veg">Vegetarian</span>
+            </div>
+            <div class="menu-content">
+              <h3 class="menu-title">
+                Masala Chai
+                <span class="menu-price">₹60</span>
+              </h3>
+              <p class="menu-desc">Traditional Indian spiced tea brewed with milk, cardamom, cinnamon, ginger, and cloves - a perfect end to your meal.</p>
+              <div class="menu-meta">
+                <span class="menu-meta-item"><i class="ri-cup-line"></i> Served Hot</span>
+              </div>
+              <div class="menu-footer">
+                <div class="rating">
+                  <div class="rating-stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-line"></i>
+                  </div>
+                  <span class="rating-count">278 ratings</span>
+                </div>
+              </div>
+              <button class="order-btn" data-id="6" data-name="Masala Chai" data-price="60" data-image="https://images.unsplash.com/photo-1571705042748-55feda1cfadc?q=80&w=800&auto=format&fit=crop">
+                <i class="ri-shopping-cart-add-line"></i> Add to Order
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section py-20" id="about">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-badge">Our Story</span>
+          <h2>About Spice Garden</h2>
+          <div class="divider"></div>
+        </div>
+        
+        <div class="about-content">
+          <div class="about-text">
+            <h3 class="about-title">Bringing Authentic Indian Flavors Since 1998</h3>
+            <p class="about-description">
+              At Spice Garden, we take pride in serving authentic Indian cuisine that celebrates the rich culinary heritage of India. Our journey began over two decades ago with a passion for sharing traditional recipes passed down through generations.
+            </p>
+            <p class="about-description">
+              Each dish is prepared using fresh ingredients, aromatic spices, and traditional cooking techniques to ensure an authentic dining experience. Our chefs, trained in various regional cuisines of India, bring their expertise to create a menu that showcases the diversity of Indian gastronomy.
+            </p>
+            
+            <div class="about-features">
+              <div class="about-feature">
+                <div class="about-feature-icon">
+                  <i class="ri-award-line"></i>
+                </div>
+                <div>
+                  <h4 class="about-feature-title">Authentic Recipes</h4>
+                  <p class="about-feature-desc">Traditional recipes passed down through generations</p>
+                </div>
+              </div>
+              
+              <div class="about-feature">
+                <div class="about-feature-icon">
+                  <i class="ri-restaurant-line"></i>
+                </div>
+                <div>
+                  <h4 class="about-feature-title">Expert Chefs</h4>
+                  <p class="about-feature-desc">Skilled chefs specializing in regional Indian cuisines</p>
+                </div>
+              </div>
+              
+              <div class="about-feature">
+                <div class="about-feature-icon">
+                  <i class="ri-heart-line"></i>
+                </div>
+                <div>
+                  <h4 class="about-feature-title">Made with Love</h4>
+                  <p class="about-feature-desc">Every dish prepared with passion and attention to detail</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800&auto=format&fit=crop" alt="Spice Garden Restaurant Interior">
+            <div class="about-image-text">
+              <h3 class="about-image-title">Elegant Dining Experience</h3>
+              <p class="about-image-subtitle">Enjoy the warm ambiance of our beautifully decorated restaurant</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Journey/Timeline Section -->
+    <section  class="hello" id="journey">
+      <style>
+
+      </style>
+    </head>
+    <body class="saffro">
+      <link href="style1.css" rel="stylesheet">
+      <section class="chronicle-section spacing-10" id="voyage">
+        <div class="wrapper">
+          <div class="chapter-title">
+            <div class="decorative-edge"></div>
+            <span class="legacy-emblem">Our Legacy</span>
+            <h2>Our Flavorful Voyage</h2>
+            <div class="separator"></div>
+            <p>Explore the vibrant history of Legacy Spice and how we've preserved our ancestral traditions while evolving through the decades.</p>
+          </div>
+          
+          <div class="chronicle">
+            <!-- Chronicle Entry 1 - Past -->
+            <div class="chronicle-entry chronicle-past">
+              <div class="chronicle-story">
+                <div class="flavor-symbol flavor-symbol-a"></div>
+                <div class="flavor-symbol flavor-symbol-b"></div>
+                <h3 class="chronicle-heading">The Origin</h3>
+                <p class="chronicle-narrative">Our story started with a modest family eatery founded by Chef Anil Sharma, offering authentic Indian dishes crafted from cherished family recipes handed down through generations.</p>
+              </div>
+              
+              <div class="chronicle-year">1998</div>
+              <div class="chronicle-marker">
+                <div class="chronicle-marker-core"></div>
+              </div>
+            </div>
+            
+            <!-- Chronicle Entry 2 - Future -->
+            <div class="chronicle-entry chronicle-future">
+              <div class="chronicle-story">
+                <div class="flavor-symbol flavor-symbol-a"></div>
+                <div class="flavor-symbol flavor-symbol-b"></div>
+                <h3 class="chronicle-heading">Initial Acclaim</h3>
+                <p class="chronicle-narrative">Legacy Spice earned its first "Top Indian Eatery" award. Our signature butter chicken and tandoori dishes gained fame, drawing food lovers eager for authentic Indian tastes.</p>
+              </div>
+             
+              <div class="chronicle-year">2005</div>
+              <div class="chronicle-marker">
+                <div class="chronicle-marker-core"></div>
+              </div>
+            </div>
+            
+            <!-- Chronicle Entry 3 - Past -->
+            <div class="chronicle-entry chronicle-past">
+              <div class="chronicle-story">
+                <div class="flavor-symbol flavor-symbol-a"></div>
+                <div class="flavor-symbol flavor-symbol-b"></div>
+                <h3 class="chronicle-heading">Growth</h3>
+                <p class="chronicle-narrative">We relocated to a larger venue and broadened our menu to feature regional Indian dishes, with expert chefs contributing their time-honored expertise.</p>
+              </div>
+              
+              <div class="chronicle-year">2012</div>
+              <div class="chronicle-marker">
+                <div class="chronicle-marker-core"></div>
+              </div>
+            </div>
+            
+            <!-- Chronicle Entry 4 - Future -->
+            <div class="chronicle-entry chronicle-future">
+              <div class="chronicle-story">
+                <div class="flavor-symbol flavor-symbol-a"></div>
+                <div class="flavor-symbol flavor-symbol-b"></div>
+                <h3 class="chronicle-heading">Cultural Engagement</h3>
+                <p class="chronicle-narrative">We introduced our cultural legacy program, organizing annual food festivals and culinary workshops to share the deep-rooted traditions of Indian cuisine with our community.</p>
+              </div>
+              
+              <div class="chronicle-year">2018</div>
+              <div class="chronicle-marker">
+                <div class="chronicle-marker-core"></div>
+              </div>
+            </div>
+            
+            <!-- Chronicle Entry 5 - Past -->
+            <div class="chronicle-entry chronicle-past">
+              <div class="chronicle-story">
+                <div class="flavor-symbol flavor-symbol-a"></div>
+                <div class="flavor-symbol flavor-symbol-b"></div>
+                <h3 class="chronicle-heading">Present Day</h3>
+                <p class="chronicle-narrative">Today, Legacy Spice is a cherished culinary destination, delivering authentic Indian cuisine while blending modern techniques, all while staying true to our storied heritage.</p>
+              </div>
+              
+              <div class="chronicle-year">2025</div>
+              <div class="chronicle-marker">
+                <div class="chronicle-marker-core"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="chronicle-close">
+            <div class="tradition-mark"></div>
+          </div>
+        </div>
+        
+        <div class="legacy-overlay"></div>
+      </section>
+    </body>
+    </html>
+<!--...................................................................................................................................................................................................................................................................................................................................................-->
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <h3>About Us</h3>
+            <p class="footer-about">Spice Garden is dedicated to bringing the authentic flavors of India to your table. We use traditional recipes and the finest ingredients to create a memorable dining experience.</p>
+            <div class="social-links">
+              <a href="#" class="social-link"><i class="ri-facebook-fill"></i></a>
+              <a href="#" class="social-link"><i class="ri-instagram-line"></i></a>
+              
+              <a href="#" class="social-link"><i class="ri-youtube-line"></i></a>
+            </div>
+          </div>
+          
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li><a href="#home" class="footer-link"><i class="ri-arrow-right-s-line"></i> Home</a></li>
+              <li><a href="#menu" class="footer-link"><i class="ri-arrow-right-s-line"></i> Our Menu</a></li>
+              <li><a href="#about" class="footer-link"><i class="ri-arrow-right-s-line"></i> About Us</a></li>
+              <li><a href="#journey" class="footer-link"><i class="ri-arrow-right-s-line"></i> Our Journey</a></li>
+              <li><a href="#reservations" class="footer-link"><i class="ri-arrow-right-s-line"></i> Reservations</a></li>
+              <li><a href="#" class="footer-link"><i class="ri-arrow-right-s-line"></i> Gift Cards</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-column">
+            <h3>Contact Us</h3>
+            <div class="contact-item">
+              <i class="ri-map-pin-line contact-icon"></i>
+              <div>
+                <p>123 Culinary Street, Flavortown</p>
+                <p>Gastronomy District, 56789</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="ri-phone-line contact-icon"></i>
+              <div>
+                <p>+91 98765 43210</p>
+                <p>+91 12345 67890</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="ri-mail-line contact-icon"></i>
+              <div>
+                <p>info@spicegarden.com</p>
+                <p>bookings@spicegarden.com</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="footer-column">
+            <h3>Opening Hours</h3>
+            <p class="opening-hours">Monday - Friday: <span>12:00 PM - 10:00 PM</span></p>
+            <p class="opening-hours">Saturday - Sunday: <span>11:00 AM - 11:00 PM</span></p>
+            <p class="opening-hours">Holidays: <span>Special Hours Apply</span></p>
+            <a href="#reservations" class="btn btn-gold mt-4">Book a Table</a>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          <p class="copyright">© 2025 Spice Garden. All Rights Reserved. Designed with <i class="ri-heart-fill text-primary"></i> for Authentic Indian Dining.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Cart functionality
+    let cart = [];
+    const cartCount = document.getElementById('cartCount');
+    const cartItems = document.getElementById('cartItems');
+    const cartSubtotal = document.getElementById('cartSubtotal');
+    const cartModal = document.getElementById('cartModal');
+    
+    // Initialize cart from localStorage if available
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedCart = localStorage.getItem('spiceGardenCart');
+      if (savedCart) {
+        cart = JSON.parse(savedCart);
+        updateCartDisplay();
+      }
+      
+      // Initialize category tabs
+      initializeCategoryTabs();
+    });
+    
+    // Header scroll effect
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('header');
+      if (window.scrollY > 100) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+      
+      // Show/hide back to top button
+      const backToTop = document.getElementById('backToTop');
+      if (window.scrollY > 500) {
+        backToTop.classList.add('show');
+      } else {
+        backToTop.classList.remove('show');
+      }
+    });
+    
+    // Menu button click
+    document.getElementById('menuBtn').addEventListener('click', () => {
+      const menuBtn = document.getElementById('menuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      
+      menuBtn.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+    });
+    
+    // Close mobile menu
+    document.getElementById('closeMenu').addEventListener('click', () => {
+      const menuBtn = document.getElementById('menuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      
+      menuBtn.classList.remove('active');
+      mobileMenu.classList.remove('active');
+    });
+    
+    // Mobile menu links
+    document.querySelectorAll('.mobile-menu-link').forEach(link => {
+      link.addEventListener('click', () => {
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.classList.remove('active');
+        mobileMenu.classList.remove('active');
+      });
+    });
+    
+    // Back to top functionality
+    document.getElementById('backToTop').addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+    
+    // Cart icon click
+    document.getElementById('cartIcon').addEventListener('click', () => {
+      cartModal.classList.add('show');
+    });
+    
+    // Close cart
+    document.getElementById('closeCart').addEventListener('click', () => {
+      cartModal.classList.remove('show');
+    });
+    
+    // Clear cart
+    document.getElementById('clearCart').addEventListener('click', () => {
+      cart = [];
+      updateCartDisplay();
+      saveCart();
+      showToast('Cart cleared successfully', 'success');
+    });
+    
+    // Checkout
+    document.getElementById('checkoutBtn').addEventListener('click', () => {
+      if (cart.length === 0) {
+        showToast('Your cart is empty', 'error');
+        return;
+      }
+      
+      showToast('Order placed successfully!', 'success');
+      cart = [];
+      updateCartDisplay();
+      saveCart();
+      cartModal.classList.remove('show');
+    });
+    
+    // Add to cart
+    document.querySelectorAll('.order-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        const id = button.getAttribute('data-id');
+        const name = button.getAttribute('data-name');
+        const price = parseFloat(button.getAttribute('data-price'));
+        const image = button.getAttribute('data-image');
+        
+        // Check if item already in cart
+        const existingItem = cart.find(item => item.id === id);
+        
+        if (existingItem) {
+          existingItem.quantity += 1;
+        } else {
+          cart.push({
+            id,
+            name,
+            price,
+            image,
+            quantity: 1
+          });
+        }
+        
+        updateCartDisplay();
+        saveCart();
+        showToast(`${name} added to cart`, 'success');
+      });
+    });
+    
+    // Update cart display
+    function updateCartDisplay() {
+      // Update cart count
+      const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+      cartCount.textContent = totalItems;
+      
+      // Update cart items
+      if (cart.length === 0) {
+        cartItems.innerHTML = `
+          <div class="cart-empty">
+            <i class="ri-shopping-cart-line"></i>
+            <p>Your cart is empty</p>
+            <a href="#menu" class="btn btn-primary" onclick="document.getElementById('cartModal').classList.remove('show')">Browse Menu</a>
+          </div>
+        `;
+      } else {
+        let cartHTML = '';
+        
+        cart.forEach(item => {
+          cartHTML += `
+            <div class="cart-item">
+              <img src="${item.image}" alt="${item.name}" class="cart-item-img">
+              <div class="cart-item-details">
+                <h4 class="cart-item-name">${item.name}</h4>
+                <p class="cart-item-price">₹${item.price.toFixed(2)}</p>
+              </div>
+              <div class="cart-item-actions">
+                <div class="cart-item-quantity">
+                  <button class="cart-qty-btn minus" data-id="${item.id}">-</button>
+                  <span class="cart-qty-count">${item.quantity}</span>
+                  <button class="cart-qty-btn plus" data-id="${item.id}">+</button>
+                </div>
+                <div class="cart-item-remove" data-id="${item.id}">
+                  <i class="ri-delete-bin-line"></i>
+                </div>
+              </div>
+            </div>
+          `;
+        });
+        
+        cartItems.innerHTML = cartHTML;
+        
+        // Add event listeners for quantity buttons
+        document.querySelectorAll('.cart-qty-btn.minus').forEach(button => {
+          button.addEventListener('click', () => {
+            const id = button.getAttribute('data-id');
+            decreaseQuantity(id);
+          });
+        });
+        
+        document.querySelectorAll('.cart-qty-btn.plus').forEach(button => {
+          button.addEventListener('click', () => {
+            const id = button.getAttribute('data-id');
+            increaseQuantity(id);
+          });
+        });
+        
+        // Add event listeners for remove buttons
+        document.querySelectorAll('.cart-item-remove').forEach(button => {
+          button.addEventListener('click', () => {
+            const id = button.getAttribute('data-id');
+            removeFromCart(id);
+          });
+        });
+      }
+      
+      // Update subtotal
+      const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+      cartSubtotal.textContent = `₹${subtotal.toFixed(2)}`;
+    }
+    
+    // Increase item quantity
+    function increaseQuantity(id) {
+      const item = cart.find(item => item.id === id);
+      if (item) {
+        item.quantity += 1;
+        updateCartDisplay();
+        saveCart();
+      }
+    }
+    
+    // Decrease item quantity
+    function decreaseQuantity(id) {
+      const item = cart.find(item => item.id === id);
+      if (item) {
+        item.quantity -= 1;
+        
+        if (item.quantity <= 0) {
+          removeFromCart(id);
+        } else {
+          updateCartDisplay();
+          saveCart();
+        }
+      }
+    }
+    
+    // Remove from cart
+    function removeFromCart(id) {
+      cart = cart.filter(item => item.id !== id);
+      updateCartDisplay();
+      saveCart();
+      showToast('Item removed from cart', 'info');
+    }
+    
+    // Save cart to localStorage
+    function saveCart() {
+      localStorage.setItem('spiceGardenCart', JSON.stringify(cart));
+    }
+    
+    // Toast notification
+    function showToast(message, type = 'info') {
+      const toastContainer = document.getElementById('toastContainer');
+      
+      const toast = document.createElement('div');
+      toast.className = 'toast';
+      
+      let icon;
+      
+      switch (type) {
+        case 'success':
+          icon = 'ri-checkbox-circle-line';
+          break;
+        case 'error':
+          icon = 'ri-error-warning-line';
+          break;
+        case 'info':
+        default:
+          icon = 'ri-information-line';
+          break;
+      }
+      
+      toast.innerHTML = `
+        <i class="${icon} toast-icon"></i>
+        <div class="toast-content">
+          <div class="toast-message">${message}</div>
+        </div>
+        <i class="ri-close-line toast-close"></i>
+      `;
+      
+      toastContainer.appendChild(toast);
+      
+      // Show toast with animation
+      setTimeout(() => {
+        toast.classList.add('show');
+      }, 10);
+      
+      // Auto hide after 3 seconds
+      const hideTimeout = setTimeout(() => {
+        hideToast(toast);
+      }, 3000);
+      
+      // Close button
+      const closeBtn = toast.querySelector('.toast-close');
+      closeBtn.addEventListener('click', () => {
+        clearTimeout(hideTimeout);
+        hideToast(toast);
+      });
+    }
+    
+    // Hide toast
+    function hideToast(toast) {
+      toast.classList.remove('show');
+      
+      // Remove after animation completes
+      setTimeout(() => {
+        if (toast.parentNode) {
+          toast.parentNode.removeChild(toast);
+        }
+      }, 300);
+    }
+    
+    // Category tabs functionality
+    function initializeCategoryTabs() {
+      const categoryTabs = document.querySelectorAll('.category-tab');
+      const menuItems = document.querySelectorAll('.menu-item');
+      
+      categoryTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          // Remove active class from all tabs
+          categoryTabs.forEach(t => t.classList.remove('active'));
+          
+          // Add active class to clicked tab
+          tab.classList.add('active');
+          
+          const category = tab.getAttribute('data-category');
+          
+          // Show/hide menu items based on category
+          menuItems.forEach(item => {
+            if (category === 'all' || item.getAttribute('data-category') === category) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+    }
+  </script>
+</body>
+</html>

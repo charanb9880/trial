@@ -1,0 +1,6 @@
+streamlit
+openai
+numpy
+matplotlib
+scikit-learn
+geopy

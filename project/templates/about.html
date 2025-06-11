@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Huffman Coding</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="/static/js/script.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Huffman Coding</div>
+        <ul class="nav-links">
+            
+            <li><a href="/about" class="active">About Huffman Coding</a></li>
+            <li><a href="/applications">Applications</a></li>
+            <li><a href="/resources">Resources</a></li>
+            
+            {% if session.get('user_id') %}
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/logout">Logout</a></li>
+            {% else %}
+                <li><a href="/login">Login</a></li>
+            {% endif %}
+            
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    <main>
+        <section class="about">
+            <h2>About Huffman Coding</h2>
+            <p>Huffman Coding is a lossless data compression algorithm developed by David A. Huffman in 1952. It assigns variable-length codes to input characters, with shorter codes for more frequent characters.</p>
+            <h3>Algorithm Steps</h3>
+            <pre><code>
+1. Calculate frequency of each character in the input.
+2. Create a min-heap of nodes, each storing a character and its frequency.
+3. While heap has more than one node:
+   a. Extract two nodes with minimum frequency.
+   b. Create a new internal node with frequency equal to the sum.
+   c. Assign left and right children to the new node.
+   d. Insert the new node back into the heap.
+4. Traverse the Huffman tree to assign codes to characters.
+            </code></pre>
+            <img src="/static/images/huffman-tree.png" alt="Huffman Tree Example" style="max-width: 100%; margin: 1rem 0;">
+            <h3>Watch a Video Explanation</h3>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/0kNXhFIEd_w" frameborder="0" allowfullscreen></iframe>
+
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Huffman Coding. All rights reserved.</p>
+        <p>Contact: <a href="mailto:info@huffmancoding.com">info@huffmancoding.com</a></p>
+        <div class="social-links">
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+            <a href="https://github.com" target="_blank">GitHub</a>
+            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        </div>
+    </footer>
+</body>
+</html>

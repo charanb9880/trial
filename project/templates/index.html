@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Huffman Coding</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="/static/js/script.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Huffman Coding</div>
+        <ul class="nav-links">
+            
+            <li><a href="/about">About Huffman Coding</a></li>
+            <li><a href="/applications">Applications</a></li>
+            <li><a href="/resources">Resources</a></li>
+            
+            {% if session.get('user_id') %}
+                <li><a href="/dashboard" class="active">Dashboard</a></li>
+                <li><a href="/logout">Logout</a></li>
+            {% else %}
+                <li><a href="/login">Login</a></li>
+            {% endif %}
+
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    <main>
+        <section class="dashboard">
+            <h2>Your Dashboard</h2>
+            <p>View your recent compression activities.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Filename</th>
+                        <th>Type</th>
+                        <th>Original Size (bytes)</th>
+                        <th>Compressed Size (bytes)</th>
+                        <th>Ratio (%)</th>
+                        <th>Date</th>
+                        <th>Huffman Tree</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for upload in uploads %}
+                    <tr>
+                        <td>{{ upload.filename }}</td>
+                        <td>{{ upload.file_type.capitalize() }}</td>
+                        <td>{{ upload.original_size }}</td>
+                        <td>{{ upload.compressed_size }}</td>
+                        <td>{{ upload.ratio | round(2) }}</td>
+                        <td>{{ upload.timestamp.strftime('%Y-%m-%d %H:%M') }}</td>
+                        <td><a href="/download_tree/huffman_tree_{{ upload.id }}.png" download>Download</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Huffman Coding. All rights reserved.</p>
+        <p>Contact: <a href="mailto:info@huffmancoding.com">info@huffmancoding.com</a></p>
+        <div class="social-links">
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+            <a href="https://github.com" target="_blank">GitHub</a>
+            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        </div>
+    </footer>
+</body>
+</html>

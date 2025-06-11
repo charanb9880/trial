@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applications - Huffman Coding</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="/static/js/applications.js" defer></script>
+</head>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  fetch('/check_login', {
+    credentials: 'same-origin'
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (!data.logged_in) {
+      alert("Please log in to use compression features.");
+      window.location.href = "/login";
+    }
+  });
+});
+</script>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">Huffman Coding</div>
+        <ul class="nav-links">
+            <li><a href="/about">About Huffman Coding</a></li>
+            <li><a href="/applications" class="active">Applications</a></li>
+            <li><a href="/resources">Resources</a></li>
+            {% if session.get('user_id') %}
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/logout">Logout</a></li>
+            {% else %}
+                <li><a href="/login">Login</a></li>
+            {% endif %}
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <main>
+        <section class="applications">
+            <h2>Applications of Huffman Coding</h2>
+            <div class="app-tabs">
+                <button class="app-tab active" onclick="showAppTab('file', event)">File Compression</button>
+                <button class="app-tab" onclick="showAppTab('image', event)">Image Compression</button>
+                <button class="app-tab" onclick="showAppTab('audio', event)">Audio Compression</button>
+                <button class="app-tab" onclick="showAppTab('video', event)">Video Compression</button>
+                <button class="app-tab" onclick="showAppTab('text', event)">Text Compression</button>
+            </div>
+
+            <!-- File Compression -->
+            <div id="file" class="app-content">
+                <h3>File Compression (ZIP, GZIP)</h3>
+                <label for="file-upload">Upload a file:</label>
+                <input type="file" id="file-upload" accept=".txt,.zip,.gz">
+                <button onclick="compressFileAuto()" class="cta-button">Compress</button>
+                <div id="file-result"></div>
+                <div id="file-progress" style="display:none;">
+                    <p>Compressing... Please wait.</p>
+                    <progress></progress>
+                </div>
+                <p id="file-result"></p>
+            </div>
+
+            <!-- Image Compression -->
+            <div id="image" class="app-content" style="display: none;">
+                <h3>Image Compression (JPEG)</h3>
+                <label for="image-upload">Upload an image:</label>
+                <input type="file" id="image-upload" accept=".jpg,.jpeg">
+                <button onclick="compressFile('image')" class="cta-button">Compress</button>
+                <div id="image-progress" style="display:none;">
+                    <p>Compressing... Please wait.</p>
+                    <progress></progress>
+                </div>
+                <p id="image-result"></p>
+            </div>
+
+            <!-- Audio Compression -->
+            <div id="audio" class="app-content" style="display: none;">
+                <h3>Audio Compression (MP3)</h3>
+                <label for="audio-upload">Upload audio:</label>
+                <input type="file" id="audio-upload" accept=".mp3">
+                <button onclick="compressFile('audio')" class="cta-button">Compress</button>
+                <div id="audio-progress" style="display:none;">
+                    <p>Compressing... Please wait.</p>
+                    <progress></progress>
+                </div>
+                <p id="audio-result"></p>
+            </div>
+
+            <!-- Video Compression -->
+            <div id="video" class="app-content" style="display: none;">
+                <h3>Video Compression (MPEG)</h3>
+                <label for="video-upload">Upload video:</label>
+                <input type="file" id="video-upload" accept=".mp4,.mpeg">
+                <button onclick="compressFile('video')" class="cta-button">Compress</button>
+                <div id="video-progress" style="display:none;">
+                    <p>Compressing... Please wait.</p>
+                    <progress></progress>
+                </div>
+                <p id="video-result"></p>
+            </div>
+
+            <!-- Text Compression -->
+            <div id="text" class="app-content" style="display: none;">
+                <h3>Text Compression (PNG, DEFLATE)</h3>
+                <label for="text-upload">Upload text:</label>
+                <input type="file" id="text-upload" accept=".txt">
+                <button onclick="compressFile('text')" class="cta-button">Compress</button>
+                <div id="text-progress" style="display:none;">
+                    <p>Compressing... Please wait.</p>
+                    <progress></progress>
+                </div>
+                <p id="text-result"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Huffman Coding. All rights reserved.</p>
+        <p>Contact: <a href="mailto:info@huffmancoding.com">info@huffmancoding.com</a></p>
+        <div class="social-links">
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+            <a href="https://github.com" target="_blank">GitHub</a>
+            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        </div>
+    </footer>
+</body>
+
+</html>

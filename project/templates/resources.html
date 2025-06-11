@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - Huffman Coding</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="/static/js/script.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Huffman Coding</div>
+        <ul class="nav-links">
+            
+            <li><a href="/about">About Huffman Coding</a></li>
+            <li><a href="/applications">Applications</a></li>
+            <li><a href="/resources" class="active">Resources</a></li>
+
+            {% if session.get('user_id') %}
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/logout">Logout</a></li>
+            {% else %}
+                <li><a href="/login">Login</a></li>
+            {% endif %}
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <main>
+        <section class="resources">
+            <h2>Resources</h2>
+            <p>Explore additional resources to deepen your understanding of Huffman Coding.</p>
+            
+            <div class="card">
+                <h3>Wikipedia: Huffman Coding</h3>
+                <p>A comprehensive overview of Huffman Coding, its history, and applications.</p>
+                <a href="https://en.wikipedia.org/wiki/Huffman_coding" target="_blank">Visit Wikipedia</a>
+            </div>
+            
+            <div class="card">
+                <h3>MIT OpenCourseWare: Huffman Coding</h3>
+                <p>Lecture notes and materials from MIT on Huffman Coding and data compression.</p>
+                <a href="https://ocw.mit.edu" target="_blank">Visit MIT OCW</a>
+            </div>
+            
+            <div class="card">
+                <h3>YouTube Playlist: Huffman Coding Tutorials</h3>
+                <p>A curated playlist of video tutorials explaining Huffman Coding concepts.</p>
+                <a href="https://www.youtube.com/playlist?list=PLUl4u3cNGP63EdMBA1s7qQ9C2C6O3VXPU" target="_blank">Watch Playlist</a>
+            </div>
+            
+            <div class="card">
+                <h3>GeeksforGeeks: Huffman Coding</h3>
+                <p>A detailed tutorial with code examples and explanations of Huffman Coding.</p>
+                <a href="https://www.geeksforgeeks.org/huffman-coding-greedy-algo-3/" target="_blank">Read Article</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Huffman Coding. All rights reserved.</p>
+        <p>Contact: <a href="mailto:info@huffmancoding.com">info@huffmancoding.com</a></p>
+        <div class="social-links">
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+            <a href="https://github.com" target="_blank">GitHub</a>
+            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        </div>
+    </footer>
+</body>
+</html>
