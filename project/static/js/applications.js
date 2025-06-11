@@ -14,7 +14,7 @@ async function compressFile(type) {
     const result = document.getElementById(`${type}-result`);
     const progress = document.getElementById(`${type}-progress`);
 
-    result.textContent = '';  // Clear previous message
+    result.textContent = ''; // Clear previous message
     progress.style.display = 'block'; // Show progress bar
 
     if (!input.files[0]) {
@@ -43,14 +43,57 @@ async function compressFile(type) {
                 Compressed Size: ${data.compressed_size} bytes<br>
                 Compression Ratio: ${data.ratio.toFixed(2)}%<br>
                 <a href="${data.compressed_file}" download class="cta-button">Download Compressed File</a>
-                
             `;
         } else {
             result.textContent = `Failed: ${data.message}`;
         }
     } catch (error) {
         result.textContent = 'Error during compression. Please try again.';
-        progress.style.display = 'none'; // Hide progress on error
+        progress.style.display = 'none';
         console.error(error);
     }
 }
+
+async function decompressFile() {
+    const input = document.getElementById('decompress-upload');
+    const result = document.getElementById('decompress-result');
+    const progress = document.getElementById('decompress-progress');
+
+    result.textContent = ''; // Clear previous result
+    progress.style.display = 'block'; // Show progress bar
+
+    if (!input.files[0]) {
+        result.textContent = 'Please upload a compressed file.';
+        progress.style.display = 'none';
+        return;
+    }
+
+    const formData = new FormData();
+    formData.append('compressed_file', input.files[0]); // <-- Correct key here!
+
+    try {
+        const response = await fetch('/decompress', {
+            method: 'POST',
+            body: formData,
+            credentials: 'same-origin'
+        });
+
+        const data = await response.json();
+        progress.style.display = 'none'; // Hide progress bar
+
+        if (data.success) {
+            result.innerHTML = `
+                <strong>Decompression Successful!</strong><br>
+                <a href="${data.decompressed_file}" download class="cta-button">Download Decompressed File</a>
+            `;
+        } else {
+            result.textContent = `Failed: ${data.message}`;
+        }
+    } catch (error) {
+        result.textContent = 'Error during decompression. Please try again.';
+        progress.style.display = 'none';
+        console.error(error);
+    }
+}
+
+
