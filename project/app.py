@@ -1,10 +1,8 @@
 from flask import Flask, render_template, request, jsonify, redirect, url_for, session, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
-import heapq, os, datetime, zipfile
+import heapq, os, datetime, pickle
 from collections import Counter
-from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
-from matplotlib.figure import Figure
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your-secret-key'
@@ -28,12 +26,12 @@ class History(db.Model):
     original_size = db.Column(db.Integer)
     compressed_size = db.Column(db.Integer)
     compression_ratio = db.Column(db.Float)
-    timestamp = db.Column(db.DateTime, default=datetime.datetime.utcnow)
+    timestamp = db.Column(db.DateTime, default=datetime.datetime.now)
 
 with app.app_context():
     db.create_all()
 
-# -------------------- Huffman Compression --------------------
+# -------------------- Huffman Compression & Decompression --------------------
 class HuffmanNode:
     def __init__(self, char, freq):
         self.char = char
@@ -47,7 +45,6 @@ def build_huffman_tree(data):
     freq = Counter(data)
     heap = [HuffmanNode(char, freq[char]) for char in freq]
     heapq.heapify(heap)
-
     while len(heap) > 1:
         left = heapq.heappop(heap)
         right = heapq.heappop(heap)
@@ -66,28 +63,52 @@ def build_codes(node, prefix="", codes=None):
         build_codes(node.right, prefix + "1", codes)
     return codes
 
-def save_huffman_tree_image(codes, filepath):
-    fig = Figure()
-    canvas = FigureCanvas(fig)
-    ax = fig.add_subplot(111)
+def compress_data(data, ext):
+    symbols = list(data)
+    root = build_huffman_tree(symbols)
+    codes = build_codes(root)
+    compressed_bits = ''.join(codes[symbol] for symbol in symbols)
+    compressed_bytes = bytearray()
+    for i in range(0, len(compressed_bits), 8):
+        byte = compressed_bits[i:i+8]
+        compressed_bytes.append(int(byte.ljust(8, '0'), 2))
+    payload = {
+        'ext': ext,
+        'codes': codes,
+        'data': compressed_bytes
+    }
+    return pickle.dumps(payload)
 
-    sorted_items = sorted(codes.items(), key=lambda x: str(x[1]))
-    labels = [f"'{k}': {v}" for k, v in sorted_items]
-    y = range(len(labels))
-    ax.barh(y, [len(str(v)) for k, v in sorted_items], color='skyblue')
-    ax.set_yticks(y)
-    ax.set_yticklabels(labels, fontsize=8)
-    ax.set_xlabel('Code Length')
-    fig.tight_layout()
-    canvas.print_figure(filepath)
+def decompress_data(payload_bytes):
+    payload = pickle.loads(payload_bytes)
+    codes = payload['codes']
+    compressed_bytes = payload['data']
+    ext = payload['ext']
+
+    reverse_codes = {v: k for k, v in codes.items()}
+    bits = ''
+    for byte in compressed_bytes:
+        bits += format(byte, '08b')
+    decoded_symbols = []
+    current_code = ''
+    for bit in bits:
+        current_code += bit
+        if current_code in reverse_codes:
+            decoded_symbols.append(reverse_codes[current_code])
+            current_code = ''
+
+    if ext.lower() in ['.txt', '.csv', '.log']:
+        return ''.join(decoded_symbols).encode('utf-8'), ext
+    else:
+        return bytes(decoded_symbols), ext
 
 # -------------------- Routes --------------------
 @app.route('/')
-def index(): 
+def index():
     return render_template('index.html')
 
 @app.route('/about')
-def about(): 
+def about():
     return render_template('about.html')
 
 @app.route('/applications')
@@ -97,7 +118,7 @@ def applications():
     return render_template('applications.html')
 
 @app.route('/resources')
-def resources(): 
+def resources():
     return render_template('resources.html')
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -131,26 +152,29 @@ def signup():
 
 @app.route('/check_login')
 def check_login():
-    response = jsonify(logged_in=session.get('logged_in', False))
-    response.headers['Cache-Control'] = 'no-store'
-    return response
+    return jsonify(logged_in=session.get('logged_in', False))
 
 @app.route('/logout')
 def logout():
     session.clear()
     return redirect(url_for('login'))
 
-@app.route('/download/<filename>')
-def download_file(filename):
-    return send_from_directory(app.config['UPLOAD_FOLDER'], filename, as_attachment=True)
-
 @app.route('/dashboard')
 def dashboard():
     if 'user_id' not in session:
         return redirect(url_for('login'))
+
     user_id = session['user_id']
     uploads = History.query.filter_by(user_id=user_id).order_by(History.timestamp.desc()).all()
+
     return render_template('dashboard.html', uploads=uploads)
+
+
+
+
+@app.route('/download/<filename>')
+def download_file(filename):
+    return send_from_directory(app.config['UPLOAD_FOLDER'], filename, as_attachment=True)
 
 @app.route('/compress/<file_type>', methods=['POST'])
 def compress(file_type):
@@ -159,50 +183,21 @@ def compress(file_type):
     try:
         file = request.files['file']
         ext = os.path.splitext(file.filename)[1]
-        filename = f"{datetime.datetime.now().timestamp()}{ext}"
         raw_data = file.read()
         original_size = len(raw_data)
 
         if ext.lower() in ['.txt', '.csv', '.log']:
-            try:
-                raw_text = raw_data.decode('utf-8')
-            except UnicodeDecodeError:
-                return jsonify({'success': False, 'message': 'Text file decoding failed.'}), 400
-            symbols = raw_text
-        elif ext.lower() == '.zip':
-            zip_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-            with open(zip_path, 'wb') as f:
-                f.write(raw_data)
-            with zipfile.ZipFile(zip_path, 'r') as zip_ref:
-                extracted_path = os.path.join(app.config['UPLOAD_FOLDER'], f"extracted_{datetime.datetime.now().timestamp()}")
-                os.makedirs(extracted_path, exist_ok=True)
-                zip_ref.extractall(extracted_path)
-                symbols = ""
-                for root_dir, _, files in os.walk(extracted_path):
-                    for file_name in files:
-                        file_path = os.path.join(root_dir, file_name)
-                        with open(file_path, 'rb') as file_in_zip:
-                            symbols += file_in_zip.read().decode(errors='ignore')
+            symbols = raw_data.decode('utf-8', errors='ignore')
         else:
-            symbols = list(raw_data)
+            symbols = raw_data
 
-        root = build_huffman_tree(symbols)
-        codes = build_codes(root)
-        compressed_bits = ''.join(codes[symbol] for symbol in symbols)
+        compressed_payload = compress_data(symbols, ext)
+        compressed_size = len(compressed_payload)
+        base_filename = f"{datetime.datetime.now().strftime('%Y%m%d%H%M%S')}_{file_type}.huff"
+        compressed_path = os.path.join(app.config['UPLOAD_FOLDER'], base_filename)
 
-        compressed_bytes = bytearray()
-        for i in range(0, len(compressed_bits), 8):
-            byte = compressed_bits[i:i+8]
-            compressed_bytes.append(int(byte.ljust(8, '0'), 2))
-        compressed_size = len(compressed_bytes)
-
-        compressed_filename = f"{datetime.datetime.now().timestamp()}_compressed{ext}"
-        compressed_path = os.path.join(app.config['UPLOAD_FOLDER'], compressed_filename)
         with open(compressed_path, 'wb') as f:
-            f.write(compressed_bytes)
-
-        tree_path = os.path.join(app.config['UPLOAD_FOLDER'], f"{filename}_tree.png")
-        save_huffman_tree_image(codes, tree_path)
+            f.write(compressed_payload)
 
         history = History(user_id=session['user_id'], filename=file.filename,
                           original_size=original_size, compressed_size=compressed_size,
@@ -215,9 +210,25 @@ def compress(file_type):
             'original_size': original_size,
             'compressed_size': compressed_size,
             'ratio': (compressed_size / original_size) * 100,
-            'tree_image': f"/download/{os.path.basename(tree_path)}",
             'compressed_file': f"/download/{os.path.basename(compressed_path)}"
         })
+    except Exception as e:
+        return jsonify({'success': False, 'message': str(e)}), 500
+
+@app.route('/decompress', methods=['POST'])
+def decompress():
+    try:
+        compressed_file = request.files['compressed_file']
+        compressed_bytes = compressed_file.read()
+
+        decompressed_data, original_ext = decompress_data(compressed_bytes)
+        output_filename = f"decompressed_{datetime.datetime.now().strftime('%Y%m%d%H%M%S')}{original_ext}"
+        output_path = os.path.join(app.config['UPLOAD_FOLDER'], output_filename)
+
+        with open(output_path, 'wb') as f:
+            f.write(decompressed_data)
+
+        return jsonify({'success': True, 'decompressed_file': f"/download/{output_filename}"})
     except Exception as e:
         return jsonify({'success': False, 'message': str(e)}), 500
 
